@@ -1,0 +1,30 @@
+##Options +FollowSymLinks All
+RewriteEngine On
+
+Options -Indexes
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule  ^home$ index.php
+
+# RewriteRule  ^chinhsach$ chitiet.php?thamso=gioi_thieu
+RewriteRule  ^about/(.*)-(.*)$ chitiet.php?thamso=chitiet_gioithieu&url=$1&id=$2
+
+RewriteRule  ^product$ chitiet.php?thamso=ma_sanpham
+RewriteRule  ^product/([a-zA-Z0-9_-]+)/page=([0-9]+)$ chitiet.php?thamso=ma_sanpham&url=$1&page=$2
+RewriteRule  ^category/(.*)$ chitiet.php?thamso=ma_sanphamct&url=$1&id=$2
+RewriteRule  ^category/([a-zA-Z0-9_-]+)/page=([0-9]+)$ chitiet.php?thamso=ma_sanphamct&url=$1&page=$3
+RewriteRule  ^detail/(.*)-(.*)$ chitiet.php?thamso=chitiet_masanpham&url=$1&id=$2
+
+RewriteRule  ^news/$ chitiet.php?thamso=tin_tintuc
+RewriteRule  ^news/([a-zA-Z0-9_-]+)/page=([0-9]+)$ chitiet.php?thamso=tin_tintuc&url=$1&page=$2
+RewriteRule  ^post/(.*)-(.*)$ chitiet.php?thamso=chitiet_tintintuc&url=$1&id=$2
+
+RewriteRule  ^contact$ chitiet.php?thamso=lien_he
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php82” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php82 .php .php8 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit

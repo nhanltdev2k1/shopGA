@@ -1,0 +1,1 @@
+<img src="hinh/1.jpg" width="100%" />

@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /quanlyweb/
+Disallow: /fckeditor/
+Disallow: */fckeditor/*
+Disallow: /feed/
+Disallow: /_notes/
+Sitemap: https://faugetglass.site/sitemap.xml
