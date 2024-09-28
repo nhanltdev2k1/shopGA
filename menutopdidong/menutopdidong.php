@@ -200,11 +200,7 @@
                                         </ul>
                                     </div>
                                 </li>
-
-                                <li class="dropdown">
-                                    <a class="nav-link" href="news/" data-toggle="dropdown">Blog</a>
-                                </li>
-
+                                <li><a class="nav-link nav_item" href="news/">Blog</a></li>
                                 <li><a class="nav-link nav_item" href="contact">Contact Us</a></li>
                             </ul>
                         </div>
