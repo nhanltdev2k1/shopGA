@@ -42,7 +42,7 @@ html, body {
     -moz-font-smoothing: antialiased;
     -o-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-	font-smoothing: antialiased;
+	-font-smoothing: antialiased;
 }
 body {
 	background: #ffffff none repeat scroll 0 0;
@@ -1547,7 +1547,7 @@ button:focus {
 	color: #333 !important;
 }
 .cart_list img {
-	border: 1px solid #ddd
+	border: 1px solid #ddd;
 	background-color: #ffffff;
 	float: left;
 	margin-right: 10px;
@@ -2071,7 +2071,7 @@ header.light_skin.nav-fixed .social_icons li a:hover {
 }
 .el_banner1 .el_img img {
 	max-width: 180px;
-	margin-top: 20px;
+	/* margin-top: 20px; */
 	width: 100%;
 }
 .el_banner2 {
@@ -4281,7 +4281,6 @@ footer .widget_title {
 	top: 0;
 	bottom: 0;
 	background-color: #FF324D;
-	z-index: ;
 	transition: all 0.5s ease-in-out;
 	-moz-transform: scale(0);
 	-webkit-transform: scale(0);
@@ -4839,7 +4838,7 @@ footer .widget_title {
 }
 .deal_content {
 	width: 100%;
-	padding: 30px 30px 30px 0;
+	padding: 30px 30px 30px 30px;
 }
 .deal_content .product_info {
 	padding: 0;
@@ -7200,4 +7199,18 @@ blockquote p:last-child {
 /*===================================*
   24.END ELEMENT DESIGN
 *===================================*/
-
+.h4-home {
+	font-weight: 700;
+    margin: 0;
+    text-transform: capitalize;
+	color: #292b2c;
+    font-family: 'Roboto';
+	font-size: 1.5rem;
+	line-height: 1.2;
+}
+.b-p-t {
+	font-weight: 500;
+	font-size: 1.25rem;
+	font-family: 'Roboto';
+	color: #292b2c;
+}

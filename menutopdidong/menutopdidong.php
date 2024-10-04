@@ -21,9 +21,11 @@
                     <div class="d-flex align-items-center justify-content-center justify-content-md-end">
                         <div class="lng_dropdown">
                             <select name="countries" class="custome_select">
-                                <option value='en' data-image="assets/images/eng.png" data-title="English">English</option>
+                                <option value='en' data-image="assets/images/eng.png" data-title="English">English
+                                </option>
                                 <option value='fn' data-image="assets/images/fn.png" data-title="France">France</option>
-                                <option value='us' data-image="assets/images/us.png" data-title="United States">United States</option>
+                                <option value='us' data-image="assets/images/us.png" data-title="United States">United
+                                    States</option>
                             </select>
                         </div>
                         <div class="ml-3">
@@ -42,8 +44,8 @@
         <div class="custom-container">
             <div class="nav_block">
                 <a class="navbar-brand" href="index.html">
-                    <img class="logo_light" src="assets/images/logo_light.png" alt="logo" />
-                    <img class="logo_dark" src="assets/images/logo_dark.png" alt="logo" />
+                    <img class="logo_light" src="hinhmenu/logo/okhotel-dark.webp" alt="logo" />
+                    <img class="logo_dark" src="hinhmenu/logo/okhotel-white.webp" alt="logo" />
                 </a>
                 <div class="product_search_form rounded_input">
                     <form>
@@ -60,7 +62,8 @@
                                             $name_url = strtolower($tv_21['name_url']);
                                             $thuocloai = $tv_21['thuocloai'];
                                         ?>
-                                            <option value="category/<?php echo $name_url; ?>"><?php echo $thuocloai; ?></option>
+                                        <option value="category/<?php echo $name_url; ?>"><?php echo $thuocloai; ?>
+                                        </option>
                                         <?php } ?>
                                     </select>
                                 </div>
@@ -72,8 +75,12 @@
                 </div>
                 <ul class="navbar-nav attr-nav align-items-center">
                     <li><a href="#" class="nav-link"><i class="linearicons-user"></i></a></li>
-                    <li><a href="#" class="nav-link"><i class="linearicons-heart"></i><span class="wishlist_count">0</span></a></li>
-                    <li class="dropdown cart_dropdown"><a class="nav-link cart_trigger" href="#" data-toggle="dropdown"><i class="linearicons-bag2"></i><span class="cart_count">0</span><span class="amount"><span class="currency_symbol">$</span>0.0</span></a>
+                    <li><a href="#" class="nav-link"><i class="linearicons-heart"></i><span
+                                class="wishlist_count">0</span></a></li>
+                    <li class="dropdown cart_dropdown"><a class="nav-link cart_trigger" href="#"
+                            data-toggle="dropdown"><i class="linearicons-bag2"></i><span
+                                class="cart_count">0</span><span class="amount"><span
+                                    class="currency_symbol">$</span>0.0</span></a>
                     </li>
                 </ul>
             </div>
@@ -84,7 +91,8 @@
             <div class="row">
                 <div class="col-lg-3 col-md-4 col-sm-6 col-3">
                     <div class="categories_wrap">
-                        <button type="button" data-toggle="collapse" data-target="#navCatContent" aria-expanded="false" class="categories_btn">
+                        <button type="button" data-toggle="collapse" data-target="#navCatContent" aria-expanded="false"
+                            class="categories_btn">
                             <i class="linearicons-menu"></i><span>All Categories </span>
                         </button>
                         <div id="navCatContent" class="nav_cat navbar collapse">
@@ -97,7 +105,9 @@
                                     $name_url = strtolower($tv_21['name_url']);
                                     $thuocloai = $tv_21['thuocloai'];
                                 ?>
-                                    <li><a class="dropdown-item nav-link nav_item" href="category/<?php echo $name_url; ?>"><i class="fa fa-caret-right"></i> <span><?php echo $thuocloai; ?></span></a></li>
+                                <li><a class="dropdown-item nav-link nav_item"
+                                        href="category/<?php echo $name_url; ?>"><i class="fa fa-caret-right"></i>
+                                        <span><?php echo $thuocloai; ?></span></a></li>
                                 <?php } ?>
                             </ul>
                             <div class="more_categories">More Categories</div>
@@ -106,11 +116,13 @@
                 </div>
                 <div class="col-lg-9 col-md-8 col-sm-6 col-9">
                     <nav class="navbar navbar-expand-lg">
-                        <button class="navbar-toggler side_navbar_toggler" type="button" data-toggle="collapse" data-target="#navbarSidetoggle" aria-expanded="false">
+                        <button class="navbar-toggler side_navbar_toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSidetoggle" aria-expanded="false">
                             <span class="ion-android-menu"></span>
                         </button>
                         <div class="pr_search_icon">
-                            <a href="javascript:void(0);" class="nav-link pr_search_trigger"><i class="linearicons-magnifier"></i></a>
+                            <a href="javascript:void(0);" class="nav-link pr_search_trigger"><i
+                                    class="linearicons-magnifier"></i></a>
                         </div>
                         <div class="collapse navbar-collapse mobile_side_menu" id="navbarSidetoggle">
                             <ul class="navbar-nav">
@@ -118,7 +130,8 @@
                                     <a data-toggle="dropdown" class="nav-link active" href="home">Home</a>
                                 </li>
                                 <li>
-                                    <a data-toggle="dropdown" class="nav-link" href="about/website-information-overview">About Us</a>
+                                    <a data-toggle="dropdown" class="nav-link"
+                                        href="about/website-information-overview">About Us</a>
                                 </li>
                                 <li class="dropdown dropdown-mega-menu">
                                     <a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown">Shop</a>
@@ -131,7 +144,7 @@
                                                             <li class="dropdown-header">Shop Page Layout</li>
                                                             <?php
                                                             require('db.php');
-                                                            $query = "SELECT * FROM loai_ma_sanpham ORDER BY id DESC LIMIT 10";
+                                                            $query = "SELECT * FROM loai_ma_sanpham ORDER BY id ASC  LIMIT 10";
                                                             $result = mysqli_query($link, $query);
                                                             $i = 0;
                                                             while ($row = mysqli_fetch_array($result)) {
@@ -164,7 +177,8 @@
                                                     <div class="header_banner_content">
                                                         <div class="shop_banner">
                                                             <div class="banner_img overlay_bg_40">
-                                                                <img src="assets/images/shop_banner3.jpg" alt="shop_banner" />
+                                                                <img src="hinhmenu/banner/banner-product-okhotel.webp"
+                                                                    alt="shop_banner" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -195,7 +209,8 @@
                                                 $url = $tv_2['linkurl'];
                                                 $link = str_replace("?", "", strtolower("about/$url"));
                                             ?>
-                                                <li><a class="dropdown-item nav-link nav_item" href="<?php echo "$link"; ?>"><?php echo $tieude; ?></a></li>
+                                            <li><a class="dropdown-item nav-link nav_item"
+                                                    href="<?php echo "$link"; ?>"><?php echo $tieude; ?></a></li>
                                             <?php } ?>
                                         </ul>
                                     </div>

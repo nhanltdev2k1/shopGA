@@ -1,6 +1,9 @@
-<h1 style="font-size:0px; margin: 0px; height:0px; color:#fff; padding: 0px;"><a href='https://hackhe.xyz/'>Folding bikes for commuters</a></h1>
-<h2 style="font-size:0px; margin: 0px; height:0px; color:#fff; padding: 0px;"><a href='https://hackhe.xyz/'>Lightweight racing bikes</a></h2>
-<h2 style="font-size:0px; margin: 0px; height:0px; color:#fff; padding: 0px;"><a href='https://hackhe.xyz/'>Kids' bikes safety</a></h2>
+<h1 style="font-size:0px; margin: 0px; height:0px; color:#fff; padding: 0px;"><a href='https://hackhe.xyz/'>Folding
+        bikes for commuters</a></h1>
+<h2 style="font-size:0px; margin: 0px; height:0px; color:#fff; padding: 0px;"><a href='https://hackhe.xyz/'>Lightweight
+        racing bikes</a></h2>
+<h2 style="font-size:0px; margin: 0px; height:0px; color:#fff; padding: 0px;"><a href='https://hackhe.xyz/'>Kids' bikes
+        safety</a></h2>
 
 <?php
 include('phantrang/phantrang_dichvu.php');
@@ -87,8 +90,8 @@ include('phantrang/phantrang_dichvu.php');
                                                 $name_url = strtolower($tv_21['name_url']);
                                                 $thuocloai = $tv_21['thuocloai'];
                                             ?>
-                                                <option value="category/<?php echo $name_url; ?>"><?php echo $thuocloai; ?>
-                                                </option>
+                                            <option value="category/<?php echo $name_url; ?>"><?php echo $thuocloai; ?>
+                                            </option>
                                             <?php } ?>
                                         </select>
                                     </div>
@@ -151,46 +154,45 @@ include('phantrang/phantrang_dichvu.php');
                                 $url = htmlspecialchars($row['linkurl'], ENT_QUOTES, 'UTF-8');
                                 $link = htmlspecialchars(strtolower("detail/$url"), ENT_QUOTES, 'UTF-8');
                             ?>
-                                <div class="col-6 col-sm-4 col-xl-3">
-                                    <div class="product-default">
-                                        <figure>
-                                            <a href="<?php echo $link; ?>">
-                                                <img src="<?php echo $link_hinh; ?>" width="280"
-                                                    height="280" alt="<?php echo $tieude; ?>">
-                                            </a>
-                                            <div class="label-group">
-                                                <div class="product-label label-hot">HOT</div>
-                                                <div class="product-label label-sale">-13%</div>
+                            <div class="col-6 col-sm-4 col-xl-3">
+                                <div class="product-default">
+                                    <figure>
+                                        <a href="<?php echo $link; ?>">
+                                            <img src="<?php echo $link_hinh; ?>" width="280" height="280"
+                                                alt="<?php echo $tieude; ?>">
+                                        </a>
+                                        <div class="label-group">
+                                            <div class="product-label label-hot">HOT</div>
+                                            <div class="product-label label-sale">-13%</div>
+                                        </div>
+                                    </figure>
+                                    <div class="product-details">
+                                        <div class="category-list">
+                                            <a href="home" class="product-category">Category</a>
+                                        </div>
+                                        <p class="product-title p-product-title">
+                                            <a href="<?php echo $link; ?>"><?php echo $tieude; ?></a>
+                                        </p>
+                                        <div class="ratings-container">
+                                            <div class="product-ratings">
+                                                <span class="ratings" style="width:80%"></span>
+                                                <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                        </figure>
-                                        <div class="product-details">
-                                            <div class="category-list">
-                                                <a href="home" class="product-category">Category</a>
-                                            </div>
-                                            <p class="product-title p-product-title">
-                                                <a href="<?php echo $link; ?>"><?php echo $tieude; ?></a>
-                                            </p>
-                                            <div class="ratings-container">
-                                                <div class="product-ratings">
-                                                    <span class="ratings" style="width:80%"></span>
-                                                    <span class="tooltiptext tooltip-top"></span>
-                                                </div>
-                                            </div>
-                                            <div class="price-box">
-                                                <span class="product-price"><?php echo $giagoc_formatted; ?></span>
-                                            </div>
-                                            <div class="product-action">
-                                                <a href="wishlist.html" class="btn-icon-wish" title="wishlist"><i
-                                                        class="icon-heart"></i></a>
-                                                <a href="#"
-                                                    class="btn-icon btn-add-cart product-type-simple"><i
-                                                        class="icon-shopping-cart"></i><span>ADD TO CART</span></a>
-                                                <a href="<?php echo $link; ?>" class="btn-quickviews"
-                                                    title="Quick View"><i class="fas fa-external-link-alt"></i></a>
-                                            </div>
+                                        </div>
+                                        <div class="price-box">
+                                            <span class="product-price"><?php echo $giagoc_formatted; ?></span>
+                                        </div>
+                                        <div class="product-action">
+                                            <a href="wishlist.html" class="btn-icon-wish" title="wishlist"><i
+                                                    class="icon-heart"></i></a>
+                                            <a href="#" class="btn-icon btn-add-cart product-type-simple"><i
+                                                    class="icon-shopping-cart"></i><span>ADD TO CART</span></a>
+                                            <a href="<?php echo $link; ?>" class="btn-quickviews" title="Quick View"><i
+                                                    class="fas fa-external-link-alt"></i></a>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
                             <?php
                             }
                             $stmt->close();
