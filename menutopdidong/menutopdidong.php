@@ -21,10 +21,10 @@
                     <div class="d-flex align-items-center justify-content-center justify-content-md-end">
                         <div class="lng_dropdown">
                             <select name="countries" class="custome_select">
-                                <option value='en' data-image="assets/images/eng.png" data-title="English">English
+                                <option value='en' data-image="hinhmenu/icon/eng.png" data-title="English">English
                                 </option>
-                                <option value='fn' data-image="assets/images/fn.png" data-title="France">France</option>
-                                <option value='us' data-image="assets/images/us.png" data-title="United States">United
+                                <option value='fn' data-image="hinhmenu/icon/fn.png" data-title="France">France</option>
+                                <option value='us' data-image="hinhmenu/icon/us.png" data-title="United States">United
                                     States</option>
                             </select>
                         </div>
@@ -62,8 +62,8 @@
                                             $name_url = strtolower($tv_21['name_url']);
                                             $thuocloai = $tv_21['thuocloai'];
                                         ?>
-                                        <option value="category/<?php echo $name_url; ?>"><?php echo $thuocloai; ?>
-                                        </option>
+                                            <option value="category/<?php echo $name_url; ?>"><?php echo $thuocloai; ?>
+                                            </option>
                                         <?php } ?>
                                     </select>
                                 </div>
@@ -105,9 +105,9 @@
                                     $name_url = strtolower($tv_21['name_url']);
                                     $thuocloai = $tv_21['thuocloai'];
                                 ?>
-                                <li><a class="dropdown-item nav-link nav_item"
-                                        href="category/<?php echo $name_url; ?>"><i class="fa fa-caret-right"></i>
-                                        <span><?php echo $thuocloai; ?></span></a></li>
+                                    <li><a class="dropdown-item nav-link nav_item"
+                                            href="category/<?php echo $name_url; ?>"><i class="fa fa-caret-right"></i>
+                                            <span><?php echo $thuocloai; ?></span></a></li>
                                 <?php } ?>
                             </ul>
                             <div class="more_categories">More Categories</div>
@@ -129,12 +129,9 @@
                                 <li>
                                     <a data-toggle="dropdown" class="nav-link active" href="home">Home</a>
                                 </li>
-                                <li>
-                                    <a data-toggle="dropdown" class="nav-link"
-                                        href="about/website-information-overview">About Us</a>
-                                </li>
+                                <li><a class="nav-link nav_item" href="about/website-information-overview/">About Us</a></li>
                                 <li class="dropdown dropdown-mega-menu">
-                                    <a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown">Shop</a>
+                                    <a class="dropdown-toggle nav-link" href="product" data-toggle="dropdown">Shop</a>
                                     <div class="dropdown-menu">
                                         <ul class="mega-menu d-lg-flex">
                                             <li class="mega-menu-col col-lg-9">
@@ -209,8 +206,8 @@
                                                 $url = $tv_2['linkurl'];
                                                 $link = str_replace("?", "", strtolower("about/$url"));
                                             ?>
-                                            <li><a class="dropdown-item nav-link nav_item"
-                                                    href="<?php echo "$link"; ?>"><?php echo $tieude; ?></a></li>
+                                                <li><a class="dropdown-item nav-link nav_item"
+                                                        href="<?php echo "$link"; ?>"><?php echo $tieude; ?></a></li>
                                             <?php } ?>
                                         </ul>
                                     </div>

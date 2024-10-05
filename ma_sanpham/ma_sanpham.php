@@ -10,123 +10,82 @@ include('phantrang/phantrang_dichvu.php');
 ?>
 
 <body>
-    <div class="page-wrapper">
-        <main class="main">
-            <div class="category-banner-container bg-gray">
-                <div class="container">
-                    <div class="category-banner banner p-0">
-                        <div class="row align-items-center no-gutters m-0 text-center text-lg-left">
-                            <div
-                                class="col-md-4 col-xl-2 offset-xl-2 d-flex justify-content-center justify-content-lg-start my-5 my-lg-0">
-                                <div class="d-flex flex-column justify-content-center">
-                                    <p class="home-slide-h4 text-light text-uppercase m-b-1">Extra</p>
-                                    <p class="home-slide-h2 text-uppercase m-b-1" style="font-size: 3.3125em;">20% off
-                                    </p>
-                                    <p class="heading-border-h4 font-weight-bold text-uppercase heading-border m-b-3">
-                                        BIKES</p>
-
-                                </div>
-                            </div>
-                            <div class="col-md-5 col-lg-4 text-md-center my-5 my-lg-0"
-                                style="background-image: url(hinhmenu/banner/shop-banner-bg.png);">
-                                <img class="d-inline-block" src="hinhmenu/banner/shop-banner.png" alt="banner"
-                                    width="400" height="242">
-                            </div>
-                            <div class="col-md-3 my-5 my-lg-0">
-                                <p class="home-slide-h3 font5 m-b-5">Summer Sale</p>
-                                <a href="#" class="btn btn-teritary btn-lg ml-0">Shop All Sale</a>
-                            </div>
-                        </div>
+    <div class="breadcrumb_section bg_gray page-title-mini">
+        <div class="container"><!-- STRART CONTAINER -->
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="page-title">
+                        <p class="h1-home">Bella Bags Shop</p>
                     </div>
                 </div>
-            </div>
-            <nav aria-label="breadcrumb" class="breadcrumb-nav">
-                <div class="container">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="home"><i class="icon-home"></i></a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Shop</li>
+                <div class="col-md-6">
+                    <ol class="breadcrumb justify-content-md-end">
+                        <li class="breadcrumb-item"><a href="home">Home</a></li>
+                        <li class="breadcrumb-item active">Product</li>
                     </ol>
                 </div>
-            </nav>
+            </div>
+        </div>
+    </div>
 
+    <!-- START MAIN CONTENT -->
+    <div class="main_content">
+
+        <!-- START SECTION SHOP -->
+        <div class="section">
             <div class="container">
-                <div class="row main-content">
+                <div class="row">
                     <div class="col-lg-9">
-                        <nav class="toolbox sticky-header" data-sticky-options="{'mobile': true}">
-                            <div class="toolbox-left">
-                                <a href="#" class="sidebar-toggle"><svg data-name="Layer 3" id="Layer_3"
-                                        viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                                        <line x1="15" x2="26" y1="9" y2="9" class="cls-1"></line>
-                                        <line x1="6" x2="9" y1="9" y2="9" class="cls-1"></line>
-                                        <line x1="23" x2="26" y1="16" y2="16" class="cls-1"></line>
-                                        <line x1="6" x2="17" y1="16" y2="16" class="cls-1"></line>
-                                        <line x1="17" x2="26" y1="23" y2="23" class="cls-1"></line>
-                                        <line x1="6" x2="11" y1="23" y2="23" class="cls-1"></line>
-                                        <path
-                                            d="M14.5,8.92A2.6,2.6,0,0,1,12,11.5,2.6,2.6,0,0,1,9.5,8.92a2.5,2.5,0,0,1,5,0Z"
-                                            class="cls-2"></path>
-                                        <path d="M22.5,15.92a2.5,2.5,0,1,1-5,0,2.5,2.5,0,0,1,5,0Z" class="cls-2">
-                                        </path>
-                                        <path d="M21,16a1,1,0,1,1-2,0,1,1,0,0,1,2,0Z" class="cls-3"></path>
-                                        <path
-                                            d="M16.5,22.92A2.6,2.6,0,0,1,14,25.5a2.6,2.6,0,0,1-2.5-2.58,2.5,2.5,0,0,1,5,0Z"
-                                            class="cls-2"></path>
-                                    </svg>
-                                    <span>Filter</span>
-                                </a>
-
-                                <div class="toolbox-item toolbox-sort">
-                                    <label>Filter:</label>
-
-                                    <div class="select-custom">
-                                        <select name="orderby" class="form-control"
-                                            onchange="if (this.value) window.location.href=this.value">
-                                            <option value="" selected="selected">Select Type</option>
-                                            <?php
-                                            require('db.php');
-                                            $tv1 = "SELECT * FROM loai_ma_sanpham ORDER BY id ASC";
-                                            $tv_11 = mysqli_query($link, $tv1);
-                                            while ($tv_21 = mysqli_fetch_array($tv_11)) {
-                                                $name_url = strtolower($tv_21['name_url']);
-                                                $thuocloai = $tv_21['thuocloai'];
-                                            ?>
-                                            <option value="category/<?php echo $name_url; ?>"><?php echo $thuocloai; ?>
-                                            </option>
-                                            <?php } ?>
-                                        </select>
+                        <div class="row align-items-center mb-4 pb-1">
+                            <div class="col-12">
+                                <div class="product_header">
+                                    <div class="product_header_left">
+                                        <div class="custom_select">
+                                            <select class="form-control form-control-sm" id="categorySelect">
+                                                <option value="" selected="selected">Select Type</option>
+                                                <?php
+                                                require('db.php');
+                                                $tv1 = "SELECT * FROM loai_ma_sanpham ORDER BY id ASC";
+                                                $tv_11 = mysqli_query($link, $tv1);
+                                                while ($tv_21 = mysqli_fetch_array($tv_11)) {
+                                                    $name_url = strtolower($tv_21['name_url']);
+                                                    $thuocloai = $tv_21['thuocloai'];
+                                                ?>
+                                                    <option value="category/<?php echo $name_url; ?>"><?php echo $thuocloai; ?></option>
+                                                <?php } ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <script>
+                                        document.getElementById('categorySelect').addEventListener('change', function() {
+                                            var selectedValue = this.value;
+                                            if (selectedValue) {
+                                                window.location.href = selectedValue;
+                                            }
+                                        });
+                                    </script>
+                                    <div class="product_header_right">
+                                        <div class="products_view">
+                                            <a href="javascript:Void(0);" class="shorting_icon grid active"><i class="ti-view-grid"></i></a>
+                                            <a href="javascript:Void(0);" class="shorting_icon list"><i class="ti-layout-list-thumb"></i></a>
+                                        </div>
+                                        <div class="custom_select">
+                                            <select class="form-control form-control-sm">
+                                                <option value="">Showing</option>
+                                                <option value="9">9</option>
+                                                <option value="12">12</option>
+                                                <option value="18">18</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="toolbox-right">
-                                <div class="toolbox-item toolbox-show">
-                                    <label>Show:</label>
-
-                                    <div class="select-custom">
-                                        <select name="count" class="form-control">
-                                            <option value="25">25</option>
-                                            <option value="30">30</option>
-                                            <option value="35">35</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="toolbox-item layout-modes">
-                                    <a href="category.html" class="layout-btn btn-grid active" title="Grid">
-                                        <i class="icon-mode-grid"></i>
-                                    </a>
-                                    <a href="category-list.html" class="layout-btn btn-list" title="List">
-                                        <i class="icon-mode-list"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </nav>
-
-                        <div class="row">
+                        </div>
+                        <div class="row shop_container">
                             <?php
                             require('db.php');
                             $p = new pager;
-                            $limit = 25;
+                            $limit = 9;
                             $start = $p->findStart($limit);
 
                             // Prepare and execute count query
@@ -154,65 +113,60 @@ include('phantrang/phantrang_dichvu.php');
                                 $url = htmlspecialchars($row['linkurl'], ENT_QUOTES, 'UTF-8');
                                 $link = htmlspecialchars(strtolower("detail/$url"), ENT_QUOTES, 'UTF-8');
                             ?>
-                            <div class="col-6 col-sm-4 col-xl-3">
-                                <div class="product-default">
-                                    <figure>
-                                        <a href="<?php echo $link; ?>">
-                                            <img src="<?php echo $link_hinh; ?>" width="280" height="280"
-                                                alt="<?php echo $tieude; ?>">
-                                        </a>
-                                        <div class="label-group">
-                                            <div class="product-label label-hot">HOT</div>
-                                            <div class="product-label label-sale">-13%</div>
-                                        </div>
-                                    </figure>
-                                    <div class="product-details">
-                                        <div class="category-list">
-                                            <a href="home" class="product-category">Category</a>
-                                        </div>
-                                        <p class="product-title p-product-title">
-                                            <a href="<?php echo $link; ?>"><?php echo $tieude; ?></a>
-                                        </p>
-                                        <div class="ratings-container">
-                                            <div class="product-ratings">
-                                                <span class="ratings" style="width:80%"></span>
-                                                <span class="tooltiptext tooltip-top"></span>
+                                <div class="col-md-4 col-6">
+                                    <div class="product">
+                                        <div class="product_img">
+                                            <a href="<?php echo $link; ?>">
+                                                <img src="<?php echo $link_hinh; ?>" alt="<?php echo $tieude; ?>">
+                                            </a>
+                                            <div class="product_action_box">
+                                                <ul class="list_none pr_action_btn">
+                                                    <li class="add-to-cart"><a href="<?php echo $link; ?>"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
+                                                    <li><a href="<?php echo $link; ?>" class="popup-ajaxs"><i class="icon-shuffle"></i></a></li>
+                                                    <li><a href="<?php echo $link_hinh; ?>" class="popup-ajaxs"><i class="icon-magnifier-add"></i></a></li>
+                                                    <li><a href="#"><i class="icon-heart"></i></a></li>
+                                                </ul>
                                             </div>
                                         </div>
-                                        <div class="price-box">
-                                            <span class="product-price"><?php echo $giagoc_formatted; ?></span>
-                                        </div>
-                                        <div class="product-action">
-                                            <a href="wishlist.html" class="btn-icon-wish" title="wishlist"><i
-                                                    class="icon-heart"></i></a>
-                                            <a href="#" class="btn-icon btn-add-cart product-type-simple"><i
-                                                    class="icon-shopping-cart"></i><span>ADD TO CART</span></a>
-                                            <a href="<?php echo $link; ?>" class="btn-quickviews" title="Quick View"><i
-                                                    class="fas fa-external-link-alt"></i></a>
+                                        <div class="product_info">
+                                            <p class="product_title"><a href="<?php echo $link; ?>"><?php echo $tieude; ?></a></p>
+                                            <div class="product_price">
+                                                <span class="price"><?php echo $giagoc_formatted; ?></span>
+                                            </div>
+                                            <div class="rating_wrap">
+                                                <div class="rating">
+                                                    <div class="product_rate" style="width:80%"></div>
+                                                </div>
+                                                <span class="rating_num">(21)</span>
+                                            </div>
+                                            <div class="pr_desc">
+                                                <p><?php echo $mota; ?></p>
+                                            </div>
+                                            <div class="pr_switch_wrap">
+                                                <div class="product_color_switch">
+                                                    <span class="active" data-color="#87554B"></span>
+                                                    <span data-color="#333333"></span>
+                                                    <span data-color="#DA323F"></span>
+                                                </div>
+                                            </div>
+                                            <div class="list_product_action_box">
+                                                <ul class="list_none pr_action_btn">
+                                                    <li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
+                                                    <li><a href="<?php echo $link; ?>" class="popup-ajaxs"><i class="icon-shuffle"></i></a></li>
+                                                    <li><a href="<?php echo $link; ?>" class="popup-ajaxs"><i class="icon-magnifier-add"></i></a></li>
+                                                    <li><a href="<?php echo $link; ?>"><i class="icon-heart"></i></a></li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                             <?php
                             }
                             $stmt->close();
                             ?>
                         </div>
-
-                        <nav class="toolbox toolbox-pagination mb-0">
-                            <div class="toolbox-item toolbox-show">
-                                <label class="mt-0">Show:</label>
-
-                                <div class="select-custom">
-                                    <select name="count" class="form-control">
-                                        <option value="20">20</option>
-                                        <option value="25">25</option>
-                                        <option value="30">30</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <ul class="pagination toolbox-item">
+                        <div class="row">
+                            <div class="col-12">
                                 <div class="bgphantranga">
                                     <?php
                                     echo "<div align='left' class='phantrang' style='float: left;width: 100%;text-align: right;'> &nbsp;&nbsp;&nbsp;&nbsp;Page: ";
@@ -221,16 +175,16 @@ include('phantrang/phantrang_dichvu.php');
                                     echo "</div>"
                                     ?>
                                 </div>
-                            </ul>
-                        </nav>
+                            </div>
+                        </div>
                     </div>
-
-                    <div class="sidebar-overlay"></div>
-                    <aside class="sidebar-shop col-lg-3 order-lg-first mobile-sidebar">
+                    <div class="col-lg-3 order-lg-first mt-4 pt-2 mt-lg-0 pt-lg-0">
                         <?php include('menu_trai/leftsanpham.php'); ?>
-                    </aside>
+                    </div>
                 </div>
             </div>
-        </main>
+        </div>
     </div>
 </body>
+
+</html>

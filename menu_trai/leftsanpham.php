@@ -1,198 +1,95 @@
-<div class="sidebar-wrapper">
+<div class="sidebar">
     <div class="widget">
-        <p class="widget-title">
-            <a data-toggle="collapse" href="#widget-body-1" role="button" aria-expanded="true"
-                aria-controls="widget-body-1">Categories</a>
-        </p>
-
-        <div class="collapse show" id="widget-body-1">
-            <div class="widget-body">
-                <ul class="cat-list">
-                    <?php
-                    require('db.php');
-
-                    // Fetch all categories in one query
-                    $stmt = $link->prepare("SELECT id, thuocloai, name_url FROM loai_ma_sanpham ORDER BY id ASC");
-                    $stmt->execute();
-                    $result = $stmt->get_result();
-
-                    // Initialize arrays to store categories
-                    $bicycles = [];
-                    $trainingEquipment = [];
-
-                    // Fetch and categorize results
-                    $count = 0;
-                    while ($row = $result->fetch_assoc()) {
-                        $count++;
-                        if ($count <= 5) {
-                            $bicycles[] = $row;
-                        } else {
-                            $trainingEquipment[] = $row;
-                        }
-                    }
-                    ?>
-                    <!-- Bicycles Section -->
-                    <li>
-                        <a href="#widget-category-1" data-toggle="collapse" role="button" aria-expanded="true"
-                            aria-controls="widget-category-1">Bicycles<span class="products-count">(<?php echo count($bicycles); ?>)</span>
-                            <span class="toggle"></span></a>
-                        <div class="collapse show" id="widget-category-1">
-                            <ul class="cat-sublist">
-                                <?php foreach ($bicycles as $category) { ?>
-                                    <li>
-                                        <a href="category/<?php echo strtolower($category['name_url']); ?>">
-                                            <?php echo $category['thuocloai']; ?>
-                                        </a>
-                                    </li>
-                                <?php } ?>
-                            </ul>
-                        </div>
-                    </li>
-                    <!-- Training & Equipment Section -->
-                    <li>
-                        <a href="#widget-category-2" data-toggle="collapse" role="button" aria-expanded="true"
-                            aria-controls="widget-category-2">Training & Equipment<span class="products-count">(<?php echo count($trainingEquipment); ?>)</span>
-                            <span class="toggle"></span></a>
-                        <div class="collapse show" id="widget-category-2">
-                            <ul class="cat-sublist">
-                                <?php foreach ($trainingEquipment as $category) { ?>
-                                    <li>
-                                        <a href="category/<?php echo strtolower($category['name_url']); ?>">
-                                            <?php echo $category['thuocloai']; ?>
-                                        </a>
-                                    </li>
-                                <?php } ?>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
+        <h5 class="widget_title">Categories</h5>
+        <ul class="widget_categories">
+            <li><a href="#"><span class="categories_name">Women</span><span class="categories_num">(9)</span></a></li>
+            <li><a href="#"><span class="categories_name">Top</span><span class="categories_num">(6)</span></a></li>
+            <li><a href="#"><span class="categories_name">T-Shirts</span><span class="categories_num">(4)</span></a></li>
+            <li><a href="#"><span class="categories_name">Men</span><span class="categories_num">(7)</span></a></li>
+            <li><a href="#"><span class="categories_name">Shoes</span><span class="categories_num">(12)</span></a></li>
+        </ul>
     </div>
-
-    <div class="widget widget-price">
-        <p class="widget-title">
-            <a data-toggle="collapse" href="#widget-body-2" role="button" aria-expanded="true"
-                aria-controls="widget-body-2">Price</a>
-        </p>
-
-        <div class="collapse show" id="widget-body-2">
-            <div class="widget-body pb-0">
-                <form action="#">
-                    <div class="price-slider-wrapper">
-                        <div id="price-slider"></div>
-                    </div>
-
-                    <div
-                        class="filter-price-action d-flex align-items-center justify-content-between flex-wrap">
-                        <div class="filter-price-text">
-                            Price:
-                            <span id="filter-price-range"></span>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary">Filter</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <div class="widget widget-color">
-        <p class="widget-title">
-            <a data-toggle="collapse" href="#widget-body-3" role="button" aria-expanded="true"
-                aria-controls="widget-body-3">Color</a>
-        </p>
-
-        <div class="collapse show" id="widget-body-3">
-            <div class="widget-body pb-0">
-                <ul class="config-swatch-list">
-                    <li class="active">
-                        <a href="#" style="background-color: #000;">Black</a>
-                    </li>
-                    <li>
-                        <a href="#" style="background-color: #0188cc;">Blue</a>
-                    </li>
-                    <li>
-                        <a href="#" style="background-color: #81d742;">Green</a>
-                    </li>
-                    <li>
-                        <a href="#" style="background-color: #eded65;">Yellow</a>
-                    </li>
-                    <li>
-                        <a href="#" style="background-color: #6085a5;">Indigo</a>
-                    </li>
-                    <li>
-                        <a href="#" style="background-color: #ab6e6e;">Red</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
     <div class="widget">
-        <p class="widget-title">
-            <a data-toggle="collapse" href="#widget-body-4" role="button" aria-expanded="true"
-                aria-controls="widget-body-4">Sizes</a>
-        </p>
-
-        <div class="collapse show" id="widget-body-4">
-            <div class="widget-body">
-                <ul class="cat-list">
-                    <li><a href="#">Extra Large</a></li>
-                    <li><a href="#">Large</a></li>
-                    <li><a href="#">Medium</a></li>
-                    <li><a href="#">Small</a></li>
-                </ul>
+        <h5 class="widget_title">Filter</h5>
+        <div class="filter_price">
+            <div id="price_filter" data-min="0" data-max="500" data-min-value="50" data-max-value="300" data-price-sign="$"></div>
+            <div class="price_range">
+                <span>Price: <span id="flt_price"></span></span>
+                <input type="hidden" id="price_first">
+                <input type="hidden" id="price_second">
             </div>
         </div>
     </div>
-    <div class="widget widget-featured pb-0">
-        <p class="widget-title">Featured Products</p>
-        <?php
-        require('db.php');
-        // Prepared statement for improved security
-        $stmt = $link->prepare("SELECT * FROM (SELECT * FROM ma_sanpham WHERE noibat=1 ORDER BY id DESC LIMIT 100) AS recent_news ORDER BY RAND() LIMIT 5");
-        $stmt->execute();
-        $result = $stmt->get_result();
-
-        // Fetch data and display products
-        while ($row = $result->fetch_assoc()) {
-            $link_hinh = "HinhCTSP/HinhSanPham/" . htmlspecialchars($row['hinhanh']);
-            $tieude = htmlspecialchars($row['tieude']);
-            $url = htmlspecialchars($row['linkurl']);
-            $giagoc = '$' . number_format($row['giagoc'], 2, '.', ',');
-            $link = str_replace("?", "", strtolower("detail/$url"));
-        ?>
-            <div class="widget-body">
-                <div class="featured-col">
-                    <div class="product-default left-details product-widget">
-                        <figure>
-                            <a href="<?php echo $link; ?>">
-                                <img src="<?php echo $link_hinh; ?>"
-                                    width="75" height="75" alt="<?php echo $tieude; ?>" />
-                            </a>
-                        </figure>
-                        <div class="product-details">
-                            <p class="p-product-title product-title">
-                                <a href="<?php echo $link; ?>"><?php echo $tieude; ?></a>
-                            </p>
-                            <div class="ratings-container">
-                                <div class="product-ratings">
-                                    <span class="ratings" style="width:80%"></span>
-                                    <span class="tooltiptext tooltip-top"></span>
-                                </div>
-                            </div>
-                            <div class="price-box">
-                                <span class="product-price"><?php echo $giaban_formatted; ?></span>
-                            </div>
-                        </div>
-                    </div>
-
+    <div class="widget">
+        <h5 class="widget_title">Brand</h5>
+        <ul class="list_brand">
+            <li>
+                <div class="custome-checkbox">
+                    <input class="form-check-input" type="checkbox" name="checkbox" id="Arrivals" value="">
+                    <label class="form-check-label" for="Arrivals"><span>New Arrivals</span></label>
                 </div>
+            </li>
+            <li>
+                <div class="custome-checkbox">
+                    <input class="form-check-input" type="checkbox" name="checkbox" id="Lighting" value="">
+                    <label class="form-check-label" for="Lighting"><span>Lighting</span></label>
+                </div>
+            </li>
+            <li>
+                <div class="custome-checkbox">
+                    <input class="form-check-input" type="checkbox" name="checkbox" id="Tables" value="">
+                    <label class="form-check-label" for="Tables"><span>Tables</span></label>
+                </div>
+            </li>
+            <li>
+                <div class="custome-checkbox">
+                    <input class="form-check-input" type="checkbox" name="checkbox" id="Chairs" value="">
+                    <label class="form-check-label" for="Chairs"><span>Chairs</span></label>
+                </div>
+            </li>
+            <li>
+                <div class="custome-checkbox">
+                    <input class="form-check-input" type="checkbox" name="checkbox" id="Accessories" value="">
+                    <label class="form-check-label" for="Accessories"><span>Accessories</span></label>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="widget">
+        <h5 class="widget_title">Size</h5>
+        <div class="product_size_switch">
+            <span>xs</span>
+            <span>s</span>
+            <span>m</span>
+            <span>l</span>
+            <span>xl</span>
+            <span>2xl</span>
+            <span>3xl</span>
+        </div>
+    </div>
+    <div class="widget">
+        <h5 class="widget_title">Color</h5>
+        <div class="product_color_switch">
+            <span data-color="#87554B"></span>
+            <span data-color="#333333"></span>
+            <span data-color="#DA323F"></span>
+            <span data-color="#2F366C"></span>
+            <span data-color="#B5B6BB"></span>
+            <span data-color="#B9C2DF"></span>
+            <span data-color="#5FB7D4"></span>
+            <span data-color="#2F366C"></span>
+        </div>
+    </div>
+    <div class="widget">
+        <div class="shop_banner">
+            <div class="banner_img overlay_bg_20">
+                <img src="siteshopga/assets/images/sidebar_banner_img.jpg" alt="sidebar_banner_img">
             </div>
-        <?php
-        }
-        $stmt->close();
-        ?>
+            <div class="shop_bn_content2 text_white">
+                <h5 class="text-uppercase shop_subtitle">New Collection</h5>
+                <h3 class="text-uppercase shop_title">Sale 30% Off</h3>
+                <a href="#" class="btn btn-white rounded-0 btn-sm text-uppercase">Shop Now</a>
+            </div>
+        </div>
     </div>
 </div>

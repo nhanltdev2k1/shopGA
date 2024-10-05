@@ -10,7 +10,7 @@ include("title_meta/title_meta.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<base href="http://localhost/shopga/">
+<base href="http://localhost:8080/shopga/">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -33,18 +33,18 @@ include("title_meta/title_meta.php");
     <meta property="og:description" content="<?php echo $dis; ?>" />
 
     <script>
-    WebFontConfig = {
-        google: {
-            families: ['Open+Sans:300,400,600,700,800', 'Poppins:300,400,500,600,700']
-        }
-    };
-    (function(d) {
-        var wf = d.createElement('script'),
-            s = d.scripts[0];
-        wf.src = 'siteokhotelbikestore/cssokhotel/assets/js/webfont.js';
-        wf.async = true;
-        s.parentNode.insertBefore(wf, s);
-    })(document);
+        WebFontConfig = {
+            google: {
+                families: ['Open+Sans:300,400,600,700,800', 'Poppins:300,400,500,600,700']
+            }
+        };
+        (function(d) {
+            var wf = d.createElement('script'),
+                s = d.scripts[0];
+            wf.src = 'siteokhotelbikestore/cssokhotel/assets/js/webfont.js';
+            wf.async = true;
+            s.parentNode.insertBefore(wf, s);
+        })(document);
     </script>
 
     <link rel="stylesheet" href="cssokhotel/assets/css/animate.css">
@@ -70,12 +70,12 @@ include("title_meta/title_meta.php");
 </head>
 
 <script type="application/ld+json">
-{
-    "@context": "http://schema.org",
-    "@type": "WebSite",
-    "name": "okhotel shop",
-    "url": "https://okhotel.xyz/"
-}
+    {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "name": "okhotel shop",
+        "url": "https://okhotel.xyz/"
+    }
 </script>
 </head>
 
